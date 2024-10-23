@@ -1,0 +1,16 @@
+<html>
+<body>
+    <h1>Rule Engine</h1>
+    <form action="/evaluate" method="post">
+        <label>Age:</label>
+        <input type="number" name="age"/><br/>
+        <label>Department:</label>
+        <input type="text" name="department"/><br/>
+        <label>Salary:</label>
+        <input type="number" name="salary"/><br/>
+        <label>Experience:</label>
+        <input type="number" name="experience"/><br/>
+        <input type="submit" value="Evaluate Rule"/>
+    </form>
+</body>
+</html>
