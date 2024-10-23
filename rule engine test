@@ -1,0 +1,23 @@
+package com.ruleengine;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class RuleEngineTest {
+
+    @Test
+    void testCreateRule() {
+        RuleParser parser = new RuleParser();
+        ASTNode node = parser.createRule("age > 30 AND department == 'Sales'");
+        assertNotNull(node);
+    }
+
+    @Test
+    void testEvaluateRule() {
+        RuleEngine engine = new RuleEngine();
+        RuleParser parser = new RuleParser();
+        ASTNode rule = parser.createRule("age > 30 AND department == 'Sales'");
+        UserData data = new UserData(35, "Sales", 60000, 5);
+        assertTrue(engine.evaluateRule(rule, data));
+    }
+}
